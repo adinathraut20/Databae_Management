@@ -8,5 +8,5 @@ Assignment 2
 3. Another word for row is record, tuple, entity, oppotunity .
    Another word for column is Attribute, method .
 
-4. Because while inserting row it is randomly store  in memory depending upon memory ,
+4. Because while inserting row it is randomly store  in memory depending upon memory avaliability ,
 	so it isn't possible to see the 1st 5 rows of a table.
