@@ -1,0 +1,46 @@
+create table supplier
+(
+    `S#` varchar(5) primary key,
+	Sname varchar(25),
+	Status varchar(25),
+    city char(10)
+);
+create table parts
+(
+	`P#` varchar(5) primary key,
+	 Pname varchar(20),
+	 Color varchar(15),
+	 Weight varchar(25),
+	 city char(10)
+);
+create table projects
+(
+	`J#` varchar(5) primary key,
+	Jname varchar(20),
+	city char(10)
+);
+create table SPJ
+(
+    qty varchar(50),
+    `S#` varchar(5),
+    `P#` varchar(5),
+    `J#` varchar(5),
+	foreign key (`S#`) references supplier(`S#`),
+	foreign key (`P#`) references parts(`P#`),
+	foreign key (`J#`) references projects(`J#`)
+);
+-------------------------------------------------------------
+
+- select * from supplier;
+- select `s#`,sname from supplier;
+- select pname,color from parts where city = 'London';
+- select * from supplier where city = 'London';
+- select * from supplier where city = 'Paris' or city = 'Athens';
+- select * from projects where city = 'Athens';
+- select pname from parts where weight >= 1000 and weight <= 2000;
+- select * from supplier where status >= 20;
+- select * from supplier where city not like 'London';
+- select city from supplier;
+- select weight*1000 as milligrams,weight/1000 as kilograms from parts;
+   
+
