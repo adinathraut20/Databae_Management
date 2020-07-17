@@ -1,0 +1,12 @@
+Assignment 2
+
+
+1. Cnum is the primary key in customers table.
+
+2. 4th Column is Rating int (4).
+
+3. Another word for row is record, tuple, entity, oppotunity .
+   Another word for column is Attribute, method .
+
+4. Because while inserting row it is randomly store  in memory depending upon memory ,
+	so it isn't possible to see the 1st 5 rows of a table.
