@@ -1,5 +1,9 @@
 Assignment 3:
 
-1). Yes, ASNI recognize the data type DATE.
+1) Does ANSI recognize the data type DATE?
 
-2). DML (Data Manipulation Language) of SQL subdivision is used to insert values in tables. 
+> Yes, ASNI recognize the data type DATE.
+
+2) Which subdivision of SQL is used to insert values in tables?
+
+> DML (Data Manipulation Language) of SQL subdivision is used to insert values in tables. 

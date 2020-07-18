@@ -1,20 +1,27 @@
-show databases;
+Assignment –1
+
+Creating sample tables and inserting values.
+
+Create the following tables with the given structures and 
+insert sample data as specified: -
+
+> show databases;
 
 
 
-create database sameersir;
+> create database sameersir;
 
 
 
-use sameersir;
+> use sameersir;
 
 
 
-show tables;
+> show tables;
 
 
 
-create table SALESPEOPLE(
+> create table SALESPEOPLE(
 								
 				Snum int(4),
  
