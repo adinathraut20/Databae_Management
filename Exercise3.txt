@@ -46,7 +46,21 @@ with ‘o’.
 
 9. Display the Supplier name and the status (as Ten, Twenty, Thirty, etc.).
 
-> 
+> select Sname, case
+
+	when Status = 10 then 'Ten'
+
+	when Status = 20 then 'Twenty'
+	
+when Status = 30 then 'Thirty'
+	
+when Status = 40 then 'Forty'
+	
+else Status
+
+	end Status1
+
+	from supplier;
 
 10. Display the current day (e.g. Thursday). 
 
