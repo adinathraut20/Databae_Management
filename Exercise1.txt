@@ -106,7 +106,7 @@ Write the SELECT queries to do the following:-
 >	select `S#`,Sname from supplier;
 
 
-8. Display the PNAME and COLOR from the P table for the CITY=”London”
+8. Display the PNAME and COLOR from the P table for the CITY=â€Londonâ€
 
 >	select Pname,color from parts where city='London'; 
 
