@@ -17,16 +17,20 @@ Rating”, while the others will have the words “Low Rating”.
 each customer with more than one current order. Put the results in alphabetical
 order.
 
-> select Cname from customers 
-		where Cnum IN (select Cnum from orders 
+> select * from (select Cname as Name,Cnum as Num 
+		from customers 
+		where Cnum IN (select Cnum  
+				from orders 
 				group by Cnum having count(Cnum) > 1 )
 	
-	
-	union
+		union
 
-  select Sname from salespeople 
-		where Snum IN (select Snum from orders 
-				group by Snum having count(Snum) > 1);
+  select Sname,Snum from salespeople 
+			where Snum IN (select Snum 
+					from orders 
+					group by Snum 
+					having count(Snum) > 1)) as l1 
+					order by l1.name;
 
 
 3) Form a union of three queries. Have the first select the snums of all salespeople in
