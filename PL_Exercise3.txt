@@ -63,13 +63,70 @@ adding the increment to the minimum until the maximum is reached. For each value
 of the radius, compute and display the circumference, area, and volume of the
 sphere. (Be sure to include both the maximum and the minimum values.).
 
+>  create table circle( nos int, radius int );
+>  insert into circle values (1,2),(2,5),(3,6),(4,10),(5,6);
+>  create table tempp (Radius int , Circumference float(7,2),Area float(7,2),Volume float(7,2));
 
+>  delimiter //
+   create procedure check1(f int)
+   begin
+		declare maxa int default 0;
+        declare minb int default 0;
+        select max(radius) into maxa from circle;
+        select min(radius) into minb from circle;
+        while maxa >= minb do
+                    insert into tempp values (minb,2*(22/7)*minb, 4*(22/7)*minb*minb, (4/3)*(22/7)*pow(minb,3));
+                    set minb=minb+f;
+       end while ;
+   end ; //
+   delimiter ;
+
+>  call check1(1);
+
+>  select * from tempp;
 
 4. A palindrome is a word that is spelled the same forward and backward, such as
 level, radar, etc. Write a program to Selects from any table a five letter word and
 determine whether it is a palindrome.
 
+>  create table tempp(Result varchar(50));
+
+>  delimiter //
+   create procedure checkp(n int)
+   begin
+		declare x varchar(50);
+        select Ename into x from emp where Empno = n;
+		if reverse(x) = x then 
+				insert into tempp values (concat(x," is a Palingdrome"));
+		else
+				insert into tempp values (concat(x," is not a Palingdrome"));
+		end if;
+   end; //
+   delimiter ;
+
+>  call checkp(11);
+
+>  select * from tempp;
+
 
 
 5. Modify the above program to Select from any table a variable length word. This
 requires determining how many characters are read in. 
+
+>  create table tempp(Result varchar(50));
+
+>  delimiter //
+   create procedure checkp(n int) 
+   begin
+		declare x varchar(50);
+        select Ename into x from emp where length(Ename) = n limit 1;
+		if reverse(x) = x then 
+				insert into tempp values (concat(x," is a Palingdrome of length: ",length(x)));
+		else
+				insert into tempp values (concat(x," is not a Palingdrome of length: ",length(x)));
+		end if;
+   end; //
+   delimiter ;
+
+>  call checkp(6);
+>  select * from tempp;
