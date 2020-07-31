@@ -130,3 +130,22 @@ requires determining how many characters are read in.
 
 >  call checkp(6);
 >  select * from tempp;
+
+OR
+
+>  delimiter //
+	create procedure palindrome(x varchar(5))
+	begin
+		declare y int default 1;
+		declare z int default 0;
+		while(y <= floor(length(x)/2)) do
+			if substr(x,y,1) = substr(x,-y,1) then
+				set z = z + 1;
+			end if;
+			set y = y + 1;
+        end while;
+        if z = floor(length(x)/2) then
+        	insert into tempp values("word is a palindrome");
+        end if;
+    end; //
+    delimiter ;
